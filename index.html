@@ -1,153 +1,216 @@
-
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-        <title>SelcukSportsHD | Maç Yayınları, Belgesel, Sinema ve Daha Fazlası</title>
-        <link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
-        <link rel="stylesheet" href="./css/index.css">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-      
-        <!-- AMP versiyonu -->
-        <link rel="amphtml" href="https://amp.selcuksportshdamp8.xyz/amp.html">
-      
-        <!-- Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QYBSJRBQPS"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){ dataLayer.push(arguments); }
-          gtag('js', new Date());
-          gtag('config', 'G-QYBSJRBQPS');
-        </script>
-        <style>
-            /* Sayfa Arka Planı */
-            body {
-              margin: 0;
-              font-family: Arial, sans-serif;
-              background: linear-gradient(135deg, #2980b9, #8e44ad);
-              height: 100vh;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              background-size: cover;
-            }
-        
-            /* İçerik Konteyneri */
-            .content {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              text-align: center;
-              padding: 30px;
-              border-radius: 10px;
-              background-color: rgba(255, 255, 255, 0.9);
-              box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            }
-            ul {
-  list-style-type: none; /* Liste işaretlerini kaldır */
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Listeyi ortalar */
-}
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canerinho Sports HD | Maç Yayınları, Belgesel, Sinema ve Daha Fazlası</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e9b4b, #2c3e50); /* Futbol sahası yeşili ve siyah */
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+    }
 
-/* Liste öğeleri için stil */
-li {
-  width: 100%;
-  max-width: 380px; /* Liste öğelerinin genişliğini sınırlayın */
-  margin-bottom: 20px; /* Liste öğeleri arasına boşluk bırak */
-  display: flex;
-  justify-content: center; /* Liste öğelerini yatayda ortala */
-  align-items: center; /* Liste öğelerini dikeyde ortala */
-}
-        
-            /* Maç Linki Tasarımı */
-            .match-link {
-              display: flex;
-              align-items: center;
-              background-color: #2c3e50;
-              color: white;
-              text-decoration: none;
-              border-radius: 8px;
-              padding: 10px;
-              margin: 10px 0;
-              transition: transform 0.3s ease, box-shadow 0.3s ease;
-              max-width: 350px;
-              box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            }
-        
-            .match-link {
-  display: flex;
-  align-items: center;
-  background-color: #2c3e50;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 10px 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 350px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  flex-wrap: nowrap; /* Yatayda taşmayı önler */
-}
-        
-            .icon {
-              background-color: #f39c12;
-              border-radius: 50%;
-              padding: 12px;
-              margin-right: 15px;
-              font-size: 24px;
-              color: white;
-            }
-        
-            .name {
-  font-size: 16px;
-  font-weight: bold;
-  width: 220px;         /* Sabit genişlik */
-  flex-shrink: 0;
-  display: flex;        /* İçeriği ortalamak için */
-  justify-content: center;
-  align-items: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-        
-            .time {
-              font-size: 14px;
-              color: #95a5a6;
-            }
-          </style>
-      </head>
-      
+    /* Sol Menü */
+    .sidebar {
+      width: 250px;
+      background-color: #1d2f3b; /* Koyu renk futbol teması */
+      padding: 20px 10px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      height: 100vh;
+      overflow-y: auto;
+      position: fixed;
+      top: 58px;
+      left: 0;
+      z-index: 999;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar li {
+      margin-bottom: 15px;
+    }
+
+    .match-link {
+      display: flex;
+      align-items: center;
+      background-color: #34495e;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .match-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .icon {
+      background-color: #f39c12;
+      border-radius: 50%;
+      padding: 8px;
+      margin-right: 10px;
+      font-size: 18px;
+      color: white;
+    }
+
+    .name {
+      flex-grow: 1;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .time {
+      font-size: 12px;
+      color: #bdc3c7;
+    }
+
+    /* Ana İçerik */
+    .main-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      margin-left: 260px;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    iframe {
+      width: 80%;
+      height: 450px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      background-color: black;
+    }
+
+    .fullscreen-button {
+      margin-top: 15px;
+      padding: 10px 15px;
+      font-size: 14px;
+      border: none;
+      border-radius: 6px;
+      background-color: #2ecc71;
+      color: white;
+      cursor: pointer;
+    }
+
+    .fullscreen-button:hover {
+      background-color: #27ae60;
+    }
+
+    .soft-warning {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #d35400;
+      background-color: #f2d7d5;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid #e67e22;
+      max-width: 300px;
+    }
+
+    .button-container {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    /* Header */
+    header {
+      width: 100%;
+      background-color: #2c3e50;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+  </style>
+</head>
 <body>
+
+  <!-- Header -->
+  <header>Canerinho Sports HD</header>
+
+  <!-- Sol Menü -->
+  <div class="sidebar">
     <ul>
-        <li>
-        <a href="https://main.uxsyplayer1a09531928c5.click/index.php?id=selcukbeinsports1m" class="match-link">
-        <div class="icon">
-          <i class="icon-soccer-ball"></i>
-        </div>
-        <div class="name">Galatasaray - Bodrumspor </div>
-        <time class="time">20:00</time>
-      </a>
-        </li>
-        <li>
-            <a href="https://main.uxsyplayer1a09531928c5.click/index.php?id=selcukssport" class="match-link">
-    <div class="icon">
-        <i class="icon-soccer-ball"></i>
-    </div>
-    <div class="name">Espanyol - Getafe </div>
-    <time class="time">22:00</time>
-</a>
-
-        </li>
+      <li>
+        <a href="#" class="match-link" onclick="loadMatch('https://main.uxsyplayer1a09531928c5.click/index.php?id=selcukbeinsports1m')">
+          <div class="icon">⚽</div>
+          <div class="name">Galatasaray - Bodrumspor</div>
+          <div class="time">20:00</div>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="match-link" onclick="loadMatch('https://main.uxsyplayer1a09531928c5.click/index.php?id=selcukssport')">
+          <div class="icon">⚽</div>
+          <div class="name">Espanyol - Getafe</div>
+          <div class="time">22:00</div>
+        </a>
+      </li>
     </ul>
+  </div>
 
-      
-      
+  <!-- Ana İçerik -->
+  <div class="main-content">
+    <iframe id="videoFrame" src="about:blank" allowfullscreen></iframe>
+
+    <div class="button-container">
+      <button class="fullscreen-button" onclick="openInNewTab()">Yeni Sekmede Aç</button>
+    </div>
+
+    <div id="warningMsg" class="soft-warning" style="display: none;">Lütfen önce bir maç linkine tıklayın.</div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    function loadMatch(url) {
+      const iframe = document.getElementById("videoFrame");
+      iframe.src = url;
+      document.getElementById("warningMsg").style.display = "none";
+    }
+
+    function openInNewTab() {
+      const url = document.getElementById("videoFrame").src;
+      const warning = document.getElementById("warningMsg");
+
+      if (!url || url === "about:blank") {
+        warning.style.display = "block";
+        return;
+      }
+
+      warning.style.display = "none";
+      window.open(url, '_blank');
+    }
+  </script>
 </body>
 </html>
