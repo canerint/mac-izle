@@ -46,6 +46,24 @@
               background-color: rgba(255, 255, 255, 0.9);
               box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             }
+            ul {
+  list-style-type: none; /* Liste işaretlerini kaldır */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Listeyi ortalar */
+}
+
+/* Liste öğeleri için stil */
+li {
+  width: 100%;
+  max-width: 380px; /* Liste öğelerinin genişliğini sınırlayın */
+  margin-bottom: 20px; /* Liste öğeleri arasına boşluk bırak */
+  display: flex;
+  justify-content: center; /* Liste öğelerini yatayda ortala */
+  align-items: center; /* Liste öğelerini dikeyde ortala */
+}
         
             /* Maç Linki Tasarımı */
             .match-link {
@@ -90,13 +108,27 @@
       </head>
       
 <body>
-    <a href="https://main.uxsyplayer1a09531928c5.click/index.php?id=selcukbeinsports1m" class="match-link">
+    <ul>
+        <li>
+        <a href="https://main.uxsyplayer1a09531928c5.click/index.php?id=selcukbeinsports1m" class="match-link">
         <div class="icon">
           <i class="icon-soccer-ball"></i>
         </div>
         <div class="name">Galatasaray - Bodrumspor (Çoklu Kalite)</div>
         <time class="time">20:00</time>
       </a>
+        </li>
+        <li>
+            <a href="https://main.uxsyplayer1a09531928c5.click/index.php?id=selcukssport" class="match-link">
+    <div class="icon">
+        <i class="icon-soccer-ball"></i>
+    </div>
+    <div class="name">Espanyol - Getafe</div>
+    <time class="time">22:00</time>
+</a>
+
+        </li>
+    </ul>
       
       <style>
         .match-link {
